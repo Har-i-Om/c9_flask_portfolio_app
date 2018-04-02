@@ -36,7 +36,7 @@ def add_numbers_post():
 
 	
 @app.route('/reverse_string', methods=['GET','POST'])
-def add_numbers_post():
+def reverse_string_post():
 	  # --> ['5', '6', '8']
 	  # print(type(request.form['text']))
 	  if request.method == 'GET':
