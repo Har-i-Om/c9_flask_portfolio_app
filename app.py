@@ -34,6 +34,23 @@ def add_numbers_post():
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
 
+	
+@app.route('/reverse_string', methods=['GET','POST'])
+def add_numbers_post():
+	  # --> ['5', '6', '8']
+	  # print(type(request.form['text']))
+	  if request.method == 'GET':
+	  	return render_template('reverse_string.html')
+	  elif request.method == 'POST':
+  	      #print(request.form['text'].split())
+  	      #total = 0
+  	      try:
+  	      	#for str_num in request.form['text'].split():
+  	      		total = request.form['text'][::-1]
+  	      	return render_template('reverse_string.html', result=str(total))
+  	      except ValueError:
+  	      	return "Easy now! Please enter text of characters more than 0"
+
 
 @app.route('/shopping_list', methods=['GET','POST'])
 def shopping_list_post():
